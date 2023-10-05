@@ -1,0 +1,10 @@
+import "angular"
+import "angular-resource"
+import "angular-mocks"
+import "angular-animate"
+import "angular-route"
+
+import "./core"
+import "./phone-detail"
+import "./phone-list"
+import "./app.module"
