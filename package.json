@@ -18,25 +18,16 @@
     "cpx": "^1.5.0",
     "http-server": "^0.11.1",
     "rimraf": "^5.0.5",
+    "serve": "^5.1.2",
     "ts-loader": "^9.4.4",
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "rimraf src/dist && webpack --bail --progress --profile",
-    "postinstall": "npm run copy-libs",
+    "build": "rimraf app/dist && webpack --bail --progress --profile",
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",
-    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/lib -C",
-    "prestart": "npm install",
-    "start": "http-server ./app -a localhost -p 8000 -c-1",
-    "pretest": "npm install",
-    "test": "karma start karma.conf.js",
-    "test-single-run": "npm test -- --single-run",
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-tests/protractor.conf.js"
+    "start": "cd app && serve"
   }
 }
